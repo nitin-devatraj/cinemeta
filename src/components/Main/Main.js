@@ -1,11 +1,3 @@
-import ListBox from "./ListBox/ListBox";
-import WatchedBox from "./WatchedBox/WatchedBox";
-
-export default function Main({ tempMovieData, tempWatchedData }) {
-  return (
-    <main className="main">
-      <ListBox tempMovieData={tempMovieData} />
-      <WatchedBox tempWatchedData={tempWatchedData} />
-    </main>
-  );
+export default function Main({ children }) {
+  return <main className="main">{children}</main>;
 }
