@@ -70,6 +70,18 @@ export default function MovieDetails({
     [title]
   );
 
+  useEffect(
+    function () {
+      document.addEventListener("keydown", keydownHandler);
+      function keydownHandler(e) {
+        if (e.code === "Escape") onCloseMovie();
+      }
+
+      return () => document.removeEventListener("keydown", keydownHandler);
+    },
+    [onCloseMovie]
+  );
+
   return (
     <div className="details">
       {isLoading ? (
