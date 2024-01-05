@@ -62,6 +62,14 @@ export default function MovieDetails({
     [selectedId, KEY]
   );
 
+  useEffect(
+    function () {
+      if (title) document.title = title;
+      return () => (document.title = "cinemeta");
+    },
+    [title]
+  );
+
   return (
     <div className="details">
       {isLoading ? (
